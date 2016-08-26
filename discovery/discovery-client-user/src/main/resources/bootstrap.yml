@@ -1,8 +1,0 @@
-spring:
-  application:
-    name: user
-  cloud:
-    config:
-      uri: http://configserver:8888
-encrypt:
-  failOnError: false
