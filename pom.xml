@@ -4,19 +4,27 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.itmuch.cloud</groupId>
+	<artifactId>spring-cloud-microservice-study</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<artifactId>discovery-client-user</artifactId>
-	<description>Spring Cloud Eureka 服务发现 客户端</description>
-	<packaging>jar</packaging>
+	<packaging>pom</packaging>
 
-	<!-- 这边使用的是最新的spring-boot版本 -->
+	<modules>
+		<module>microservice-discovery-eureka</module>
+		<module>microservice-provider-user</module>
+	</modules>
+
+	<!-- 使用最新的spring-boot版本 -->
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.4.0.RELEASE</version>
 	</parent>
 
-	<!-- 必须要添加 -->
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version>1.8</java.version>
+	</properties>
+
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -29,11 +37,12 @@
 		</dependencies>
 	</dependencyManagement>
 
-	<!-- 添加eureka的依赖 -->
-	<dependencies>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-eureka</artifactId>
-		</dependency>
-	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
 </project>
