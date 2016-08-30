@@ -2,7 +2,7 @@ server:
   port: 8001
 spring:
   application:
-    name: user-service                  # 项目名称尽量用小写
+    name: microservice-provider-user    # 项目名称尽量用小写
   jpa:
     generate-ddl: false
     show-sql: true
