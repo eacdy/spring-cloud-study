@@ -15,6 +15,7 @@
 		<module>microservice-consumer-movie-feign</module>
 		<module>microservice-consumer-movie-ribbon-with-hystrix</module>
 		<module>microservice-consumer-movie-feign-with-hystrix</module>
+		<module>microservice-hystrix-dashboard</module>
 	</modules>
 
 	<!-- 使用最新的spring-boot版本 -->
