@@ -11,7 +11,7 @@ import com.itmuch.cloud.study.user.entity.User;
  * @author eacdy
  */
 @FeignClient(name = "microservice-provider-user")
-public interface UserClient {
+public interface UserFeignClient {
 	@RequestMapping("/{id}")
 	public User findById(@RequestParam("id") Long id);
 }

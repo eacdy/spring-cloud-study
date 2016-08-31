@@ -6,12 +6,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.itmuch.cloud.study.user.entity.User;
-import com.itmuch.cloud.study.user.feign.UserFeignClient;
+import com.itmuch.cloud.study.user.feign.UserFeignHystrixClient;
 
 @RestController
 public class TestFeignController {
 	@Autowired
-	private UserFeignClient userClient;
+	private UserFeignHystrixClient userClient;
 
 	@GetMapping("feign/{id}")
 	public User test(@PathVariable Long id) {
