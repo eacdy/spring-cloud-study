@@ -13,6 +13,8 @@
 		<module>microservice-provider-user</module>
 		<module>microservice-consumer-movie-ribbon</module>
 		<module>microservice-consumer-movie-feign</module>
+		<module>microservice-consumer-movie-ribbon-with-hystrix</module>
+		<module>microservice-consumer-movie-feign-with-hystrix</module>
 	</modules>
 
 	<!-- 使用最新的spring-boot版本 -->
