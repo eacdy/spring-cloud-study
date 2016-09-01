@@ -14,7 +14,7 @@ public class FeignController {
 	private UserFeignClient userFeignClient;
 
 	@GetMapping("feign/{id}")
-	public User test(@PathVariable Long id) {
+	public User findByIdFeign(@PathVariable Long id) {
 		User user = this.userFeignClient.findByIdFeign(id);
 		return user;
 	}

@@ -11,10 +11,10 @@ import com.itmuch.cloud.study.user.service.RibbonService;
 @RestController
 public class RibbonController {
 	@Autowired
-	private RibbonService testRibbonService;
+	private RibbonService ribbonService;
 
 	@GetMapping("/ribbon/{id}")
 	public User findById(@PathVariable Long id) {
-		return this.testRibbonService.findById(id);
+		return this.ribbonService.findById(id);
 	}
 }

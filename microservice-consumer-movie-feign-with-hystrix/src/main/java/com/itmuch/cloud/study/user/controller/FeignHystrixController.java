@@ -14,7 +14,7 @@ public class FeignHystrixController {
 	private UserFeignHystrixClient userFeignHystrixClient;
 
 	@GetMapping("feign/{id}")
-	public User test(@PathVariable Long id) {
+	public User findByIdFeign(@PathVariable Long id) {
 		User user = this.userFeignHystrixClient.findByIdFeign(id);
 		return user;
 	}

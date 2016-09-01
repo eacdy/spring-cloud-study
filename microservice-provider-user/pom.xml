@@ -12,8 +12,8 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
-	<!-- 添加Eureka的依赖 -->
 	<dependencies>
+		<!-- 添加Eureka的依赖 -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-eureka</artifactId>
