@@ -6,12 +6,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.itmuch.cloud.study.user.entity.User;
-import com.itmuch.cloud.study.user.service.TestRibbonService;
+import com.itmuch.cloud.study.user.service.RibbonService;
 
 @RestController
-public class TestRibbonController {
+public class RibbonController {
 	@Autowired
-	private TestRibbonService testRibbonService;
+	private RibbonService testRibbonService;
 
 	@GetMapping("/ribbon/{id}")
 	public User findById(@PathVariable Long id) {

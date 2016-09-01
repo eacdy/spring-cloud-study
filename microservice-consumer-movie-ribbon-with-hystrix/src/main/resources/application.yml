@@ -1,5 +1,5 @@
 server:
-  port: 8021
+  port: 8011
 spring:
   application:
     name: microservice-consumer-movie-ribbon-with-hystrix
@@ -8,4 +8,4 @@ eureka:
     serviceUrl:
       defaultZone: http://discovery:8761/eureka/
   instance:
-    preferIpAddress: true
+    hostname: ribbon          # 此处，preferIpAddress不设置或者设为false，不能设为false，否则影响turbine的测试。turbine存在的问题：eureka.instance.hostname一致时只能检测到一个节点，会造成turbine数据不完整

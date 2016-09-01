@@ -1,5 +1,5 @@
 server:
-  port: 8011
+  port: 8010
 spring:
   application:
     name: microservice-consumer-movie-ribbon

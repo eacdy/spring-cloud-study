@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>microservice-consumer-movie-feign-with-hystrix-stream</artifactId>
+	<artifactId>microservice-hystrix-turbine</artifactId>
 	<packaging>jar</packaging>
 
 	<parent>
@@ -15,23 +15,19 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-eureka</artifactId>
+			<artifactId>spring-cloud-starter-turbine</artifactId>
 		</dependency>
-
 		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-feign</artifactId>
-		</dependency>
-
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-netflix-turbine</artifactId>
+        </dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
-
-		<!-- 整合hystrix，其实feign中自带了hystrix，引入该依赖主要是为了使用其中的hystrix-metrics-event-stream，用于dashboard -->
 		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-hystrix</artifactId>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 	</dependencies>
 </project>
