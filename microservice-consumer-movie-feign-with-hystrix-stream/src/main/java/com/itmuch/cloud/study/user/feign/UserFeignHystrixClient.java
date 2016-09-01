@@ -17,7 +17,7 @@ import com.itmuch.cloud.study.user.feign.UserFeignHystrixClient.HystrixClientFal
 @FeignClient(name = "microservice-provider-user", fallback = HystrixClientFallback.class)
 public interface UserFeignHystrixClient {
 	@RequestMapping("/{id}")
-	public User findById(@RequestParam("id") Long id);
+	public User findByIdFeign(@RequestParam("id") Long id);
 
 	/**
 	 * 这边采取了和Spring Cloud官方文档相同的做法，将fallback类作为内部类放入Feign的接口中，当然也可以单独写一个fallback类。
@@ -33,7 +33,7 @@ public interface UserFeignHystrixClient {
 		 * @return 默认的用户
 		 */
 		@Override
-		public User findById(Long id) {
+		public User findByIdFeign(Long id) {
 			LOGGER.info("异常发生，进入fallback方法，接收的参数：id = {}", id);
 			User user = new User();
 			user.setId(-1L);

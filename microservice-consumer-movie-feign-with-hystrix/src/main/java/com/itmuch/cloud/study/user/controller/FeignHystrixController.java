@@ -9,13 +9,13 @@ import com.itmuch.cloud.study.user.entity.User;
 import com.itmuch.cloud.study.user.feign.UserFeignHystrixClient;
 
 @RestController
-public class TestFeignController {
+public class FeignHystrixController {
 	@Autowired
-	private UserFeignHystrixClient userClient;
+	private UserFeignHystrixClient userFeignHystrixClient;
 
 	@GetMapping("feign/{id}")
 	public User test(@PathVariable Long id) {
-		User user = this.userClient.findById(id);
+		User user = this.userFeignHystrixClient.findByIdFeign(id);
 		return user;
 	}
 }

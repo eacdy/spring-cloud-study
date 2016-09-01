@@ -2,4 +2,4 @@ spring:
   application:
     name: hystrix-dashboard
 server:
-  port: 8031
+  port: 8030

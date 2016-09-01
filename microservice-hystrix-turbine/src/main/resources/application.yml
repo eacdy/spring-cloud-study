@@ -1,0 +1,16 @@
+spring:
+  application.name: microservice-hystrix-turbine
+server:
+  port: 8031
+security.basic.enabled: false
+turbine:
+  appConfig: microservice-consumer-movie-feign-with-hystrix-stream,microservice-consumer-movie-ribbon-with-hystrix  ### 配置Eureka中的serviceId列表，表明监控哪些服务
+  clusterNameExpression: new String("default")
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://discovery:8761/eureka/
+      
+      
+### 参考：http://blog.csdn.net/liaokailin/article/details/51344281
+### 参考：http://blog.csdn.net/zhuchuangang/article/details/51289593

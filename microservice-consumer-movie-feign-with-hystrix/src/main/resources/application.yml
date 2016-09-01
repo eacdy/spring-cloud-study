@@ -1,5 +1,5 @@
 server:
-  port: 8022
+  port: 8021
 spring:
   application:
     name: microservice-consumer-movie-feign-with-hystrix

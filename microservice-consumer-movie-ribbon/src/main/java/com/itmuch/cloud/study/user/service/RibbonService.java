@@ -7,7 +7,7 @@ import org.springframework.web.client.RestTemplate;
 import com.itmuch.cloud.study.user.entity.User;
 
 @Service
-public class TestRibbonService {
+public class RibbonService {
 	@Autowired
 	private RestTemplate restTemplate;
 
