@@ -9,8 +9,8 @@ turbine:
   appConfig: microservice-consumer-movie-feign-with-hystrix-stream,microservice-consumer-movie-ribbon-with-hystrix  ### 配置Eureka中的serviceId列表，表明监控哪些服务
   clusterNameExpression: new String("default")
   # 1. clusterNameExpression指定集群名称，默认表达式appName；此时：turbine.aggregator.clusterConfig需要配置想要监控的应用名称
-  # 2. 当clusterNameExpression是default时，turbine.aggregator.clusterConfig可以不写，因为默认就是default
-  # 3. 当想要监控的应用配置了：eureka.instance.metadata-map.cluster: ABC时，则需要配置clusterNameExpression: metadata['cluster']，同时turbine.aggregator.clusterConfig配置ABC
+  # 2. 当clusterNameExpression: default时，turbine.aggregator.clusterConfig可以不写，因为默认就是default
+  # 3. 当clusterNameExpression: metadata['cluster']时，想要监控的应用配置了eureka.instance.metadata-map.cluster: ABC时，则需要配置，同时turbine.aggregator.clusterConfig: ABC
 eureka:
   client:
     serviceUrl:
