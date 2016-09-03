@@ -18,6 +18,8 @@
 		<module>microservice-hystrix-dashboard</module>
 		<module>microservice-consumer-movie-feign-with-hystrix-stream</module>
 		<module>microservice-hystrix-turbine</module>
+		<module>microservice-config-server</module>
+		<module>microservice-config-client</module>
 	</modules>
 
 	<!-- 使用最新的spring-boot版本 -->

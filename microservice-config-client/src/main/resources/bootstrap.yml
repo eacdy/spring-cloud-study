@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: microservice-config-client    # 对应microservice-config-server所获取的配置文件的{application}
+  cloud:
+    config:
+      uri: http://config-server:8040/
+      profile: dev                      # 指定profile，对应microservice-config-server所获取的配置文件中的{profile} 
+      label: master                     # 指定git仓库的分支，对应microservice-config-server所获取的配置文件的{label}
