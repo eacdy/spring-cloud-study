@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<artifactId>microservice-discovery-eureka</artifactId>
+	<packaging>jar</packaging>
+
+	<parent>
+		<groupId>com.itmuch.cloud</groupId>
+		<artifactId>spring-cloud-microservice-study</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-eureka-server</artifactId>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<!-- docker的maven插件，官网：https://github.com/spotify/docker-maven-plugin -->
+			<plugin>
+				<groupId>com.spotify</groupId>
+				<artifactId>docker-maven-plugin</artifactId>
+				<version>0.4.12</version>
+				<configuration>
+					<!-- 注意imageName一定要是符合正则[a-z0-9-_.]的，否则构建不会成功 -->
+					<!-- 详见：https://github.com/spotify/docker-maven-plugin Invalid repository 
+						name ... only [a-z0-9-_.] are allowed -->
+					<!-- 如果要将docker镜像push到DockerHub上去的话，这边的路径要和repo路径一致 -->
+					<imageName>eacdy/test</imageName>
+					<!-- 指定Dockerfile所在的路径 -->
+					<dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory>
+					<resources>
+						<resource>
+							<targetPath>/</targetPath>
+							<directory>${project.build.directory}</directory>
+							<include>${project.build.finalName}.jar</include>
+						</resource>
+					</resources>
+					<!-- 以下两行是为了docker push到DockerHub使用的。 -->
+					<serverId>docker-hub</serverId>
+					<registryUrl>https://index.docker.io/v1/</registryUrl>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
