@@ -8,11 +8,11 @@ import com.itmuch.cloud.study.user.entity.User;
 
 @Service
 public class RibbonService {
-	@Autowired
-	private RestTemplate restTemplate;
+    @Autowired
+    private RestTemplate restTemplate;
 
-	public User findById(Long id) {
-		// http://服务提供者的serviceId/url
-		return this.restTemplate.getForObject("http://microservice-provider-user/1", User.class);
-	}
+    public User findById(Long id) {
+        // http://服务提供者的serviceId/url
+        return this.restTemplate.getForObject("http://microservice-provider-user/" + id, User.class);
+    }
 }
