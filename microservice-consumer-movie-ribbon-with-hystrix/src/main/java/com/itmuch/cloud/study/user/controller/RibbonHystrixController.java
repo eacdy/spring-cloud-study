@@ -10,11 +10,11 @@ import com.itmuch.cloud.study.user.service.RibbonHystrixService;
 
 @RestController
 public class RibbonHystrixController {
-	@Autowired
-	private RibbonHystrixService ribbonHystrixService;
+    @Autowired
+    private RibbonHystrixService ribbonHystrixService;
 
-	@GetMapping("/ribbon/{id}")
-	public User findById(@PathVariable Long id) {
-		return this.ribbonHystrixService.findById(id);
-	}
+    @GetMapping("/ribbon/{id}")
+    public User findById(@PathVariable Long id) {
+        return this.ribbonHystrixService.findById(id);
+    }
 }

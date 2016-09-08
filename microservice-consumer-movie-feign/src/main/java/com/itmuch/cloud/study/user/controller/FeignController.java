@@ -10,12 +10,12 @@ import com.itmuch.cloud.study.user.feign.UserFeignClient;
 
 @RestController
 public class FeignController {
-	@Autowired
-	private UserFeignClient userFeignClient;
+    @Autowired
+    private UserFeignClient userFeignClient;
 
-	@GetMapping("feign/{id}")
-	public User findByIdFeign(@PathVariable Long id) {
-		User user = this.userFeignClient.findByIdFeign(id);
-		return user;
-	}
+    @GetMapping("feign/{id}")
+    public User findByIdFeign(@PathVariable Long id) {
+        User user = this.userFeignClient.findByIdFeign(id);
+        return user;
+    }
 }
