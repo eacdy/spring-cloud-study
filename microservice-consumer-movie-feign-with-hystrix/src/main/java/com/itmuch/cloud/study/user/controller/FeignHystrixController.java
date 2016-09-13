@@ -10,12 +10,12 @@ import com.itmuch.cloud.study.user.feign.UserFeignHystrixClient;
 
 @RestController
 public class FeignHystrixController {
-    @Autowired
-    private UserFeignHystrixClient userFeignHystrixClient;
+  @Autowired
+  private UserFeignHystrixClient userFeignHystrixClient;
 
-    @GetMapping("feign/{id}")
-    public User findByIdFeign(@PathVariable Long id) {
-        User user = this.userFeignHystrixClient.findByIdFeign(id);
-        return user;
-    }
+  @GetMapping("feign/{id}")
+  public User findByIdFeign(@PathVariable Long id) {
+    User user = this.userFeignHystrixClient.findByIdFeign(id);
+    return user;
+  }
 }

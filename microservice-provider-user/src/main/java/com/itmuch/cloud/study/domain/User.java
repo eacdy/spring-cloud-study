@@ -8,35 +8,35 @@ import javax.persistence.Id;
 
 @Entity
 public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-    @Column
-    private String username;
-    @Column
-    private Integer age;
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  private Long id;
+  @Column
+  private String username;
+  @Column
+  private Integer age;
 
-    public Long getId() {
-        return this.id;
-    }
+  public Long getId() {
+    return this.id;
+  }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+  public void setId(Long id) {
+    this.id = id;
+  }
 
-    public String getUsername() {
-        return this.username;
-    }
+  public String getUsername() {
+    return this.username;
+  }
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
+  public void setUsername(String username) {
+    this.username = username;
+  }
 
-    public Integer getAge() {
-        return this.age;
-    }
+  public Integer getAge() {
+    return this.age;
+  }
 
-    public void setAge(Integer age) {
-        this.age = age;
-    }
+  public void setAge(Integer age) {
+    this.age = age;
+  }
 }

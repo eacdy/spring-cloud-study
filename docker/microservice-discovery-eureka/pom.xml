@@ -31,9 +31,13 @@
 					<!-- 详见：https://github.com/spotify/docker-maven-plugin Invalid repository 
 						name ... only [a-z0-9-_.] are allowed -->
 					<!-- 如果要将docker镜像push到DockerHub上去的话，这边的路径要和repo路径一致 -->
-					<imageName>eacdy/test</imageName>
+					<imageName>eacdy/test2</imageName>
 					<!-- 指定Dockerfile所在的路径 -->
 					<dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory>
+
+					<dockerHost>https://192.168.99.100:2376</dockerHost>
+					<dockerCertPath>C:\Users\Administrator\.docker\machine\machines\default</dockerCertPath>
+
 					<resources>
 						<resource>
 							<targetPath>/</targetPath>
