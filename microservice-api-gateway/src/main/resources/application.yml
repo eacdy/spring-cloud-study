@@ -8,7 +8,7 @@ eureka:
     hostname: gateway
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://discovery:8761/eureka/
 zuul:
   ignored-services: microservice-provider-user          # 需要忽视的服务(配置后将不会被路由)
   routes:
