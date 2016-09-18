@@ -22,6 +22,6 @@ logging:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://discovery:8761/eureka/    # 指定注册中心的ip
+      defaultZone: http://discovery:8761/eureka/    # 指定注册中心的地址
   instance:
     preferIpAddress: true
