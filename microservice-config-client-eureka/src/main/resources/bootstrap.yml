@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: microservice-config-client-eureka
+  cloud:
+    config:
+      profile: dev
+      label: master
+      discovery:
+        enabled: true                                 # 默认false，设为true表示使用注册中心中的configserver配置而不自己配置configserver的uri
+        serviceId: microservice-config-server-eureka  # 指定config server在服务发现中的serviceId，默认为：configserver
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://discovery:8761/eureka/
+      
+# 参考文档：https://github.com/spring-cloud/spring-cloud-config/blob/master/docs/src/main/asciidoc/spring-cloud-config.adoc#discovery-first-bootstrap
