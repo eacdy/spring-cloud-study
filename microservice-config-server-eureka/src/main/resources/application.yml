@@ -1,5 +1,5 @@
 server:
-  port: 8042
+  port: 8050
 spring:
   application:
     name: microservice-config-server-eureka
