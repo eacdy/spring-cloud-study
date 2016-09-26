@@ -10,8 +10,8 @@ eureka:
     serviceUrl:
       defaultZone: http://discovery:8761/eureka/
 zuul:
-  ignored-services: microservice-provider-user          # 需要忽视的服务(配置后将不会被路由)
+  ignored-services: microservice-provider-user                        # 需要忽视的服务(配置后将不会被路由)
   routes:
-    movie:                                              # 可以随便写，在zuul上面唯一即可；当这里的值 = service-id时，service-id可以不写。
-      path: /movie/**                                   # 想要映射到的路径
-      service-id: microservice-consumer-movie-ribbon    # Eureka中的serviceId
+    movie:                                                            # 可以随便写，在zuul上面唯一即可；当这里的值 = service-id时，service-id可以不写。
+      path: /movie/**                                                 # 想要映射到的路径
+      service-id: microservice-consumer-movie-ribbon-with-hystrix     # Eureka中的serviceId
