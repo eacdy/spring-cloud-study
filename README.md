@@ -60,3 +60,16 @@ Spring Cloud章节的配套代码，如有疑问，请移步至该地址。
 | microservice-provider-user               | 8000 | 服务提供者                  | /1              |
 |                                          |      |                        |                 |
 
+
+
+
+
+## 实体书《Spring Cloud与Docker微服务架构实战》上市啦！
+
+* 京东购书地址：
+
+![](jd-购书链接.png)
+
+* 亚马逊购书地址：
+
+  ![](amz-购书链接.jpg)
