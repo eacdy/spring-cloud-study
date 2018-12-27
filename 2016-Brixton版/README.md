@@ -1,5 +1,12 @@
 # 项目简介
-本项目是《使用Spring Cloud与Docker实战微服务》：
+
+## WARNING
+
+> **本目录中的代码基于Spring Cloud Brixton版本编写，相对陈旧，建议阅读Finchley版本！！！**
+
+
+
+本项目是开源书《使用Spring Cloud与Docker实战微服务》：
 
 [http://git.oschina.net/itmuch/spring-cloud-book](http://git.oschina.net/itmuch/spring-cloud-book)
 
@@ -7,7 +14,7 @@
 
 Spring Cloud章节的配套代码，如有疑问，请移步至该地址。
 
-微服务架构交流QQ群：157525002（2000人群，已满），**564840207（2000人群，欢迎加入）**，欢迎加入。
+微服务架构交流QQ群：731548893，欢迎加入。
 
 
 
@@ -61,10 +68,4 @@ Spring Cloud章节的配套代码，如有疑问，请移步至该地址。
 
 
 
-
-## 实体书《Spring Cloud与Docker微服务架构实战》上市啦！
-
-* 京东购书地址：
-
-![](jd-购书链接.png)
 
