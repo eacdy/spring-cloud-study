@@ -15,5 +15,6 @@
     <module>microservice-provider-user</module>
     <module>microservice-consumer-movie</module>
     <module>microservice-discovery-eureka-ha</module>
+    <module>microservice-discovery-eureka-authenticating</module>
   </modules>
 </project>
