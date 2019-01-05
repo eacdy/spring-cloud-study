@@ -16,5 +16,6 @@
     <module>microservice-consumer-movie</module>
     <module>microservice-discovery-eureka-ha</module>
     <module>microservice-discovery-eureka-authenticating</module>
+    <module>microservice-consumer-movie-ribbon</module>
   </modules>
 </project>
