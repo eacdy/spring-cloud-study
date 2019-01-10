@@ -21,5 +21,6 @@
     <module>microservice-consumer-movie-ribbon-config-properties</module>
     <module>microservice-consumer-movie-feign</module>
     <module>microservice-consumer-movie-feign-config-java</module>
+    <module>microservice-consumer-movie-feign-config-properties</module>
   </modules>
 </project>
