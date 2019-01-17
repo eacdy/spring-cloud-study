@@ -22,5 +22,6 @@
     <module>microservice-consumer-movie-feign</module>
     <module>microservice-consumer-movie-feign-config-java</module>
     <module>microservice-consumer-movie-feign-config-properties</module>
+    <module>microservice-consumer-movie-ribbon-hystrix-common</module>
   </modules>
 </project>
