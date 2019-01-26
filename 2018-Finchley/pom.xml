@@ -29,5 +29,6 @@
     <module>microservice-hystrix-dashboard</module>
     <module>microservice-hystrix-turbine</module>
     <module>microservice-gateway-zuul</module>
+    <module>microservice-gateway-zuul-fallback</module>
   </modules>
 </project>
