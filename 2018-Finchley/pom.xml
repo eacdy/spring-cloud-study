@@ -30,5 +30,7 @@
     <module>microservice-hystrix-turbine</module>
     <module>microservice-gateway-zuul</module>
     <module>microservice-gateway-zuul-fallback</module>
+    <module>microservice-config-server</module>
+    <module>microservice-config-client</module>
   </modules>
 </project>
