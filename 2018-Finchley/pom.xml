@@ -32,5 +32,7 @@
     <module>microservice-gateway-zuul-fallback</module>
     <module>microservice-config-server</module>
     <module>microservice-config-client</module>
+    <module>microservice-config-server-encryption</module>
+    <module>microservice-config-server-encryption-rsa</module>
   </modules>
 </project>
