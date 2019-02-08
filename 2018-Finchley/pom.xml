@@ -34,5 +34,6 @@
     <module>microservice-config-client</module>
     <module>microservice-config-server-encryption</module>
     <module>microservice-config-server-encryption-rsa</module>
+    <module>microservice-config-client-refresh</module>
   </modules>
 </project>
