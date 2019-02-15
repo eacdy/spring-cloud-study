@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: microservice-foo
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+        group: DEFAULT_GROUP
+        # 文件后缀，默认为properties
+        file-extension: properties
+  profiles:
+    active: dev

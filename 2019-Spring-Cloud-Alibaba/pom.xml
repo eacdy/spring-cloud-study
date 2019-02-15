@@ -9,5 +9,6 @@
 
   <modules>
     <module>microservice-provider-user</module>
+    <module>microservice-nacos-config</module>
   </modules>
 </project>
