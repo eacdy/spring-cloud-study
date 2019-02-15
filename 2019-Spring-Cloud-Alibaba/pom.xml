@@ -10,5 +10,7 @@
   <modules>
     <module>microservice-provider-user</module>
     <module>microservice-nacos-config</module>
+    <module>microservice-consumer-movie-ribbon</module>
+    <module>microservice-consumer-movie-ribbon-sentinel</module>
   </modules>
 </project>

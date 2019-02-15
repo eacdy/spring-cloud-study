@@ -1,0 +1,10 @@
+server:
+  port: 8010
+spring:
+  application:
+    # 指定注册到eureka server上的服务名称
+    name: microservice-consumer-movie
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
