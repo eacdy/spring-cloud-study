@@ -12,5 +12,6 @@
     <module>microservice-nacos-config</module>
     <module>microservice-consumer-movie-ribbon</module>
     <module>microservice-consumer-movie-ribbon-sentinel</module>
+    <module>microservice-consumer-movie-ribbon-sentinel-block-handler/module>
   </modules>
 </project>
