@@ -36,5 +36,6 @@
     <module>microservice-config-server-encryption-rsa</module>
     <module>microservice-config-client-refresh</module>
     <module>microservice-provider-user-sleuth</module>
+    <module>microservice-provider-user-sleuth-zipkin</module>
   </modules>
 </project>
