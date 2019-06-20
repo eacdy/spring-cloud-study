@@ -28,7 +28,6 @@ public class NacosWeightRandomV2Rule extends AbstractLoadBalancerRule {
                     .selectOneHealthyInstance(name);
 
             log.info("选中的instance = {}", instance);
-
             /*
              * instance转server的逻辑参考自：
              * org.springframework.cloud.alibaba.nacos.ribbon.NacosServerList.instancesToServerList
