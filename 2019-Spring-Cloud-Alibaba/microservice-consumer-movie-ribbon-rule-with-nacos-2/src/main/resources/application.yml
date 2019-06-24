@@ -1,0 +1,19 @@
+server:
+  port: 8010
+spring:
+  application:
+    # 指定注册到eureka server上的服务名称
+    name: microservice-consumer-movie
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        namespace: db780bb6-7001-44d9-aeb5-020e67a20cbc
+        cluster-name: BJ
+        # metadata:
+          # version: v1
+          # target-version: v1
+
+microservice-provider-user:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.itmuch.cloud.study.ribbon.NacosRule
