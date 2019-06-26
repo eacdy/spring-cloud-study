@@ -53,7 +53,7 @@ public class NacosFinalRule extends AbstractLoadBalancerRule {
             // 所有实例
             List<Instance> instances = namingService.selectInstances(name, true);
 
-            List<Instance> metadataMatchInstances = Lists.newArrayList();
+            List<Instance> metadataMatchInstances = instances;
             // 如果配置了版本映射，那么只调用元数据匹配的实例
             if (StringUtils.isNotBlank(targetVersion)) {
                 metadataMatchInstances = instances.stream()

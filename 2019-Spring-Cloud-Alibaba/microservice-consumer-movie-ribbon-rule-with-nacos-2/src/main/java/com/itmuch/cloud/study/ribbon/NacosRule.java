@@ -37,8 +37,11 @@ public class NacosRule extends AbstractLoadBalancerRule {
             NamingService namingService = this.nacosDiscoveryProperties.namingServiceInstance();
 
             List<Instance> instances = namingService.selectInstances(name, true);
-            List<Instance> instancesToChoose = instances;
+            if (CollectionUtils.isEmpty(instances)) {
+                return null;
+            }
 
+            List<Instance> instancesToChoose = instances;
             if (StringUtils.isNotBlank(clusterName)) {
                 List<Instance> sameClusterInstances = instances.stream()
                         .filter(instance -> Objects.equals(clusterName, instance.getClusterName()))
