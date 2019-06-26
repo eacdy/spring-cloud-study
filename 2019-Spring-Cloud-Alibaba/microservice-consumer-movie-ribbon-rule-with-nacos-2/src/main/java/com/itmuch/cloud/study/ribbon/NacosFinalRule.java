@@ -29,8 +29,6 @@ import java.util.stream.Collectors;
 @Slf4j
 public class NacosFinalRule extends AbstractLoadBalancerRule {
     @Autowired
-    private NacosDiscoveryProperties discoveryProperties;
-    @Autowired
     private NacosDiscoveryProperties nacosDiscoveryProperties;
 
     @Override
@@ -50,7 +48,7 @@ public class NacosFinalRule extends AbstractLoadBalancerRule {
             DynamicServerListLoadBalancer loadBalancer = (DynamicServerListLoadBalancer) getLoadBalancer();
             String name = loadBalancer.getName();
 
-            NamingService namingService = discoveryProperties.namingServiceInstance();
+            NamingService namingService = this.nacosDiscoveryProperties.namingServiceInstance();
 
             // 所有实例
             List<Instance> instances = namingService.selectInstances(name, true);
