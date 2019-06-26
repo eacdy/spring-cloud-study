@@ -18,70 +18,43 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 
 /**
- * 复杂均衡规则：
- * 1. 优先选取同集群下的实例
- * 2. 元数据匹配
- * 3. 使用nacos权重
+ * 支持优先调用同集群实例的ribbon负载均衡规则.
  *
- * @author limu.zl
+ * @author itmuch.com
  */
 @Slf4j
 public class NacosRule extends AbstractLoadBalancerRule {
-    @Autowired
-    private NacosDiscoveryProperties discoveryProperties;
     @Autowired
     private NacosDiscoveryProperties nacosDiscoveryProperties;
 
     @Override
     public Server choose(Object key) {
-        // 负载均衡规则：优先选择同集群下，符合metadata的实例
-        // 如果没有，就选择所有集群下，符合metadata的实例
-
-        // 1. 查询所有实例 A
-        // 2. 筛选元数据匹配的实例 B
-        // 3. 筛选出同cluster下元数据匹配的实例 C
-        // 4. 如果C为空，就用B
-        // 5. 随机选择实例
         try {
             String clusterName = this.nacosDiscoveryProperties.getClusterName();
-            String targetVersion = this.nacosDiscoveryProperties.getMetadata().get("target-version");
-
             DynamicServerListLoadBalancer loadBalancer = (DynamicServerListLoadBalancer) getLoadBalancer();
             String name = loadBalancer.getName();
 
-            NamingService namingService = discoveryProperties.namingServiceInstance();
+            NamingService namingService = this.nacosDiscoveryProperties.namingServiceInstance();
 
-            // 所有实例
             List<Instance> instances = namingService.selectInstances(name, true);
+            List<Instance> instancesToChoose = instances;
 
-            // 筛选元数据匹配的实例
-            List<Instance> metadataMatchInstances = instances;
-            if (StringUtils.isNotBlank(targetVersion)) {
-                metadataMatchInstances = instances.stream()
-                        .filter(instance -> Objects.equals(targetVersion, instance.getMetadata().get("version")))
-                        .collect(Collectors.toList());
-            }
-            if (CollectionUtils.isEmpty(metadataMatchInstances)) {
-                log.warn("未找到元数据匹配的目标实例！请检查配置。targetVersion = {}, instance = {}", targetVersion, instances);
-                return null;
-            }
-
-            // 筛选同集群下元数据匹配的实例
-            List<Instance> clusterMetadataMatchInstances = metadataMatchInstances;
             if (StringUtils.isNotBlank(clusterName)) {
-                clusterMetadataMatchInstances = metadataMatchInstances.stream()
+                List<Instance> sameClusterInstances = instances.stream()
                         .filter(instance -> Objects.equals(clusterName, instance.getClusterName()))
                         .collect(Collectors.toList());
-            }
-            if (CollectionUtils.isEmpty(clusterMetadataMatchInstances)) {
-                clusterMetadataMatchInstances = metadataMatchInstances;
-                log.warn("发生跨集群调用。clusterName = {}, targetVersion = {}, clusterMetadataMatchInstances = {}", clusterName, targetVersion, clusterMetadataMatchInstances);
+                if (!CollectionUtils.isEmpty(sameClusterInstances)) {
+                    instancesToChoose = sameClusterInstances;
+                } else {
+                    log.warn("发生跨集群的调用，name = {}, clusterName = {}, instance = {}", name, clusterName, instances);
+                }
             }
 
-            Instance instance = ExtendBalancer.getHostByRandomWeight2(clusterMetadataMatchInstances);
+            Instance instance = ExtendBalancer.getHostByRandomWeight2(instancesToChoose);
+
             return new NacosServer(instance);
         } catch (Exception e) {
-            log.warn("发生异常", e);
+            log.warn("NacosRule发生异常", e);
             return null;
         }
     }
