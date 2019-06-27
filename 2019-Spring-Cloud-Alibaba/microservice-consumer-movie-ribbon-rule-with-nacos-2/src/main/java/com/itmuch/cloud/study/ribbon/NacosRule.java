@@ -38,6 +38,7 @@ public class NacosRule extends AbstractLoadBalancerRule {
 
             List<Instance> instances = namingService.selectInstances(name, true);
             if (CollectionUtils.isEmpty(instances)) {
+                log.warn("{}服务当前无任何实例", name);
                 return null;
             }
 
