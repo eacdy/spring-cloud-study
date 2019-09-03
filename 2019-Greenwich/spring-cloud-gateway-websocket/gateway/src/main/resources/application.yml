@@ -1,0 +1,10 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: aaa
+          uri: ws://localhost:8080
+          predicates:
+          - Path=/test-ws/**
+server:
+  port: 8040
